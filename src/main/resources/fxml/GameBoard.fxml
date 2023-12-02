@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gameboard" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.viewmodel.GameboardController">
+   <children>
+            <Text fx:id="stone1" layoutX="226.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="26.0">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="stone2" layoutX="306.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="26.0">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </Text>
+
+            <Text fx:id="stone3" layoutX="383.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="26.0">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </Text>
+
+            <Text fx:id="stone4" layoutX="462.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="26.0">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </Text>
+
+      <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu fx:id="menumenu" mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem fx:id="homeMenuItem" mnemonicParsing="false" text="Home" />
+                  <MenuItem fx:id="saveItem" mnemonicParsing="false" text="Save" />
+                  <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" text="Quit game" />
+               </items></Menu>
+            <Menu fx:id="menusettings" mnemonicParsing="false" text="Settings">
+               <items>
+                  <MenuItem fx:id="themeItem" mnemonicParsing="false" text="Change Theme" />
+                  <MenuItem fx:id="englishItem" mnemonicParsing="false" text="English" />
+                  <MenuItem fx:id="germanItem" mnemonicParsing="false" text="Deutsch" />
+                  <MenuItem fx:id="koreanItem" mnemonicParsing="false" text="Korean" />
+               </items></Menu>
+         </menus>
+      </MenuBar>
+
+      <Rectangle fx:id="colorPlayer1" arcHeight="5.0" arcWidth="5.0" fill="#87bdef" height="72.0" layoutX="70.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+      <Rectangle fx:id="colorPlayer2" arcHeight="5.0" arcWidth="5.0" fill="#87bdef" height="72.0" layoutX="460.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+
+      <ImageView fx:id="imagePlayer2" fitHeight="72.0" fitWidth="78.0" layoutX="463.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../image/Zombie2.png" />
+      </ImageView>
+      <ImageView fx:id="imagePlayer1" fitHeight="72.0" fitWidth="78.0" layoutX="73.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../image/Zombie1.png" />
+      </ImageView>
+
+
+      <GridPane fx:id="gamefield" layoutX="136.0" layoutY="165.0" minWidth="-Infinity" prefHeight="296.0" prefWidth="419.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="144.0">
+
+      </GridPane>
+
+       <Text fx:id="domeX" layoutX="447.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x" wrappingWidth="15.434101104736328">
+           <font>
+               <Font name="Book Antiqua" size="18.0" />
+           </font>
+       </Text>
+       <Text fx:id="stone3X" layoutX="368.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x" wrappingWidth="15.434101104736328">
+           <font>
+               <Font name="Book Antiqua" size="18.0" />
+           </font>
+       </Text>
+       <Text fx:id="stone2X" layoutX="291.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x" wrappingWidth="15.434101104736328">
+           <font>
+               <Font name="Book Antiqua" size="18.0" />
+           </font>
+       </Text>
+       <Text fx:id="stone1X" layoutX="211.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x" wrappingWidth="15.434101104736328">
+           <font>
+               <Font name="Book Antiqua" size="18.0" />
+           </font>
+       </Text>
+       <Rectangle fx:id="stone1Rect" arcHeight="5.0" arcWidth="5.0" fill="PEACHPUFF" height="26.0" layoutX="177.0" layoutY="454.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+
+       <Rectangle fx:id="stone2Rect" arcHeight="5.0" arcWidth="5.0" fill="LIGHTGREEN" height="26.0" layoutX="257.0" layoutY="454.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="stone3Rect" arcHeight="5.0" arcWidth="5.0" fill="DARKCYAN" height="26.0" layoutX="335.0" layoutY="453.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+      <Rectangle fx:id="domeRect" arcHeight="5.0" arcWidth="5.0" fill="RED" height="26.0" layoutX="413.0" layoutY="453.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+
+     <VBox fx:id="workerContainerP1" layoutX="39.0" layoutY="199.0" prefHeight="229.0" prefWidth="100.0">
+         <children>
+            <Circle fx:id="circle1" fill="DODGERBLUE" radius="13.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="35.0" top="30.0" />
+               </VBox.margin>
+            </Circle>
+            <Circle fx:id="circle2" fill="DODGERBLUE" radius="13.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="35.0" top="60.0" />
+               </VBox.margin>
+            </Circle>
+         </children>
+      </VBox>
+      <VBox fx:id="workerContainerP2" layoutX="562.0" layoutY="192.0" prefHeight="200.0" prefWidth="20.0">
+         <children>
+            <Circle fx:id="circle3" fill="#34ff1f" radius="13.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="35.0" top="30.0" />
+               </VBox.margin>
+            </Circle>
+            <Circle fx:id="circle4" fill="#34ff1f" radius="13.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="35.0" top="60.0" />
+               </VBox.margin>
+            </Circle>
+         </children>
+      </VBox>
+
+         <Label fx:id="playerName1" layoutX="154.0" layoutY="58.0" prefHeight="14.0" prefWidth="150.0" text="name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerName2" layoutX="543.0" layoutY="58.0" prefHeight="14.0" prefWidth="150.0" text="name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="countlabelPlayer1" layoutX="154.0" layoutY="93.0" prefHeight="14.0" prefWidth="72.0" text="count: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="countlabelPlayer2" layoutX="543.0" layoutY="93.0" prefHeight="14.0" prefWidth="72.0" text="count: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerCount1" layoutX="203.0" layoutY="90.0" prefHeight="23.0" prefWidth="38.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerCount2" layoutX="595.0" layoutY="90.0" prefHeight="23.0" prefWidth="38.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="stone2Label" layoutX="264.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L2" />
+      <Text fx:id="stone3Label" layoutX="342.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L3" />
+      <Text fx:id="domeLabel" layoutX="422.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" />
+      <Text fx:id="stone1Label" layoutX="184.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L1" />
+      <VBox fx:id="godP1" layoutX="61.0" layoutY="399.0" prefHeight="25.0" prefWidth="57.0" />
+      <VBox fx:id="godP2" layoutX="584.0" layoutY="399.0" prefHeight="25.0" prefWidth="57.0" />
+
+      <Circle fx:id="circle7" />
+      <Circle fx:id="circle8" />
+      <Circle fx:id="circle9" />
+
+
+   </children>
+</AnchorPane>

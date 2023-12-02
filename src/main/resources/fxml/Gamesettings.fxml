@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="settingPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.viewmodel.GamesettingsController">
+    <children>
+        <ImageView fx:id="themeImageGamesettings" fitHeight="500.0" fitWidth="750.00" layoutX="1.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+        </ImageView>
+        <HBox layoutX="233.0" layoutY="333.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="233.0" />
+        <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu fx:id="menumenu" mnemonicParsing="false" text="Menu">
+                    <items>
+                        <MenuItem fx:id="menuToHome" mnemonicParsing="false" text="Home" />
+                        <MenuItem fx:id="menuload" mnemonicParsing="false" text="Load" />
+                    </items></Menu>
+                <Menu fx:id="menusettings" mnemonicParsing="false" text="Settings">
+                    <items>
+                        <MenuItem fx:id="themeItem2" mnemonicParsing="false" text="Change Theme" />
+                        <MenuItem fx:id="englishItem2" mnemonicParsing="false" text="English" />
+                        <MenuItem fx:id="germanItem2" mnemonicParsing="false" text="German" />
+                        <MenuItem fx:id="koreanItem2" mnemonicParsing="false" text="Korean" />
+                    </items></Menu>
+            </menus>
+        </MenuBar>
+        <HBox fx:id="HboxPlayer1" layoutX="66.0" layoutY="89.0" spacing="9.0" />
+        <Text fx:id="playerLabel" layoutX="66.0" layoutY="71.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Player">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </Text>
+        <HBox alignment="CENTER" layoutX="66.0" layoutY="58.892578125" spacing="292.0" />
+        <HBox layoutX="66.0" layoutY="89.0" spacing="9.0">
+            <children>
+                <TextField fx:id="namePlayer1" prefHeight="25.0" prefWidth="73.0" text="Player 1" />
+                <ColorPicker fx:id="colourPlayer1" prefHeight="25.0" prefWidth="55.0" style="-fx-color-label-visible: false;">
+                    <value>
+                        <Color red="1.0" green="0.0" blue="0.0" />
+                    </value>
+                </ColorPicker>
+            </children>
+        </HBox>
+        <HBox fx:id="HboxPlayer2" layoutX="66.0" layoutY="153.0" spacing="9.0">
+            <children>
+                <TextField fx:id="namePlayer2" prefHeight="25.0" prefWidth="74.0" text="Player 2" />
+                <ColorPicker fx:id="colourPlayer2" prefHeight="25.0" prefWidth="55.0" style="-fx-color-label-visible: false;">
+                    <value>
+                        <Color red="0.0" green="0.0" blue="1.0" />
+                    </value>
+                </ColorPicker>
+            </children>
+        </HBox>
+        <Text layoutX="86.0" layoutY="134.0" stroke="WHITE" strokeType="OUTSIDE" text="Computer">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="isCompP1" layoutX="66.0" layoutY="120.0" mnemonicParsing="false" />
+        <Text layoutX="86.0" layoutY="197.0" stroke="WHITE" strokeType="OUTSIDE" text="Computer">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="isCompP2" layoutX="66.0" layoutY="183.0" mnemonicParsing="false" />
+
+        <Button fx:id="addPlayerBtn" layoutX="66.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleAddPlayer" prefHeight="25.0" prefWidth="75.0" text="Add Player" />
+
+        <Text fx:id="godLabel" layoutX="335.0" layoutY="71.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="God's Force">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="godSubLabel1" layoutX="308.0" layoutY="130.0" stroke="WHITE" strokeType="OUTSIDE" text="select a god">
+            <font>
+                <Font size="13.0" />
+            </font></Text>
+        <Text fx:id="godSubLabel2" layoutX="308.0" layoutY="193.0" stroke="WHITE" strokeType="OUTSIDE" text="select a god">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="godsForceCheck" layoutX="308.0" layoutY="54.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="7.0">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </CheckBox>
+        <ComboBox fx:id="godlist1" disable="true" layoutX="308.0" layoutY="153.0" prefHeight="25.0" prefWidth="116.0" visibleRowCount="3">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:id="apollo" fx:value="Apollo" />
+                    <String fx:id="artemis" fx:value="Artemis" />
+                    <String fx:id="athena" fx:value="Athena" />
+                    <String fx:id="atlas" fx:value="Atlas" />
+                    <String fx:id="demeter" fx:value="Demeter" />
+                    <String fx:id="hephaestus" fx:value="Hephaestus" />
+                    <String fx:id="hermes" fx:value="Hermes" />
+                    <String fx:id="minotaur" fx:value="Minotaur" />
+                    <String fx:id="pan" fx:value="Pan" />
+                    <String fx:id="prometheus" fx:value="Prometheus" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <ComboBox fx:id="godlist2" disable="true" layoutX="308.0" layoutY="89.0" prefHeight="25.0" prefWidth="116.0" visibleRowCount="3">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:id="apollo1" fx:value="Apollo" />
+                    <String fx:id="artemis1" fx:value="Artemis" />
+                    <String fx:id="athena1" fx:value="Athena" />
+                    <String fx:id="atlas1" fx:value="Atlas" />
+                    <String fx:id="demeter1" fx:value="Demeter" />
+                    <String fx:id="hephaestus1" fx:value="Hephaestus" />
+                    <String fx:id="hermes1" fx:value="Hermes" />
+                    <String fx:id="minotaur1" fx:value="Minotaur" />
+                    <String fx:id="pan1" fx:value="Pan" />
+                    <String fx:id="prometheus1" fx:value="Prometheus" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Text fx:id="steinAnzahlLabel" layoutX="550.0" layoutY="140.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Block amount">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </Text>
+        <VBox fx:id="blockAmountFields" layoutX="605.0" layoutY="177.0" prefHeight="127.0" prefWidth="53.0" spacing="9.0">
+            <children>
+                <TextField fx:id="amountLevel1" alignment="CENTER" prefHeight="16.0" prefWidth="53.0" text="22" />
+                <TextField fx:id="amountLevel2" alignment="CENTER" prefHeight="25.0" prefWidth="41.0" text="18" />
+                <TextField fx:id="amountLevel3" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" text="14" />
+                <TextField fx:id="amountDome" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" text="18" />
+            </children>
+        </VBox>
+        <Button fx:id="addPlayerButton" layoutX="66.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleAddPlayer" prefHeight="25.0" prefWidth="75.0" text="Add Player" />
+        <VBox fx:id="blockAmountLabels" layoutX="550.0" layoutY="177.0" spacing="18.0">
+            <children>
+                <Text fx:id="stoneLabel1" stroke="WHITE" strokeType="OUTSIDE" text="Level 1">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </Text>
+                <Text fx:id="stoneLabel2" stroke="WHITE" strokeType="OUTSIDE" text="Level 2">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </Text>
+                <Text fx:id="stoneLabel3" stroke="WHITE" strokeType="OUTSIDE" text="Level 3">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </Text>
+                <Text fx:id="stoneLabel4" stroke="WHITE" strokeType="OUTSIDE" text="Dome">
+                   <font>
+                      <Font size="13.0" />
+                   </font>
+                </Text>
+            </children>
+        </VBox>
+
+
+        <Text fx:id="workerAmountLabel" layoutX="550.0" layoutY="71.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Worker Amount">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="workerSubLabel" layoutX="551.0" layoutY="86.0" stroke="WHITE" strokeType="OUTSIDE" text="per Player" />
+        <RadioButton fx:id="oneWorker" layoutX="551.0" layoutY="99.0" mnemonicParsing="false" textOverrun="CENTER_ELLIPSIS">
+            <toggleGroup>
+                <ToggleGroup fx:id="workerToggle" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="twoWorkers" layoutX="591.0" layoutY="99.0" mnemonicParsing="false" selected="true" textOverrun="CENTER_ELLIPSIS" toggleGroup="$workerToggle" />
+        <RadioButton fx:id="threeWorkers" layoutX="631.0" layoutY="99.0" mnemonicParsing="false" textOverrun="CENTER_ELLIPSIS" toggleGroup="$workerToggle" />
+        <Text layoutX="571.0" layoutY="112.0" stroke="WHITE" strokeType="OUTSIDE" text="1">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+        <Text layoutX="612.0" layoutY="112.0" stroke="WHITE" strokeType="OUTSIDE" text="2">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+        <Text layoutX="653.0" layoutY="112.0" stroke="WHITE" strokeType="OUTSIDE" text="3">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Text>
+
+        <Text fx:id="globeLabel" layoutX="93.0" layoutY="293.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="World is a globe">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="globe" layoutX="66.0" layoutY="276.0" mnemonicParsing="false">
+            <font>
+                <Font name="Arial Black" size="14.0" />
+            </font>
+        </CheckBox>
+
+        <Button fx:id="startbutton" alignment="CENTER" layoutX="308.0" layoutY="420.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Start game!" textAlignment="CENTER">
+            <font>
+                <Font size="17.0" />
+            </font>
+            <effect>
+                <Blend />
+            </effect>
+        </Button>
+      <ChoiceBox fx:id="winningHeightChoice" layoutX="308.0" layoutY="303.0" prefHeight="25.0" prefWidth="106.0">
+        <items>
+                <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="2" />
+                        <String fx:value="3" />
+                        <String fx:value="4" />
+                        <String fx:value="5" />
+                </FXCollections>
+        </items>
+        <value>
+            <String fx:value="3" />
+        </value>
+      </ChoiceBox>
+
+      <Text fx:id="siegHoehe" layoutX="308.0" layoutY="291.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Winning height">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="seperateStonePoolCheck" layoutX="550.0" layoutY="146.0" mnemonicParsing="false" />
+      <Text fx:id="seperateStonePoolText" layoutX="570.0" layoutY="158.0" stroke="WHITE" strokeType="OUTSIDE" text="seperate Pools" />
+      <Text fx:id="legalMovesLabel" layoutX="66.0" layoutY="321.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Legal moves">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="upChoiceBox" layoutX="66.0" layoutY="341.0" prefHeight="25.0" prefWidth="60.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="1" />
+                <String fx:id="upAll" fx:value="all" />
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="1" />
+        </value>
+      </ChoiceBox>
+      <ChoiceBox fx:id="downChoiceBox" layoutX="135.0" layoutY="341.0" prefHeight="25.0" prefWidth="60.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:id="downAll" fx:value="all" />
+                <String fx:value="1" />
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="all" />
+        </value>
+      </ChoiceBox>
+      <Text fx:id="moveUpLabel" layoutX="67.0" layoutY="336.0" stroke="WHITE" strokeType="OUTSIDE" text="up" />
+
+      <Text fx:id="moveDownLabel" layoutX="135.0" layoutY="336.0" stroke="WHITE" strokeType="OUTSIDE" text="down" />
+      <Text fx:id="fieldsize" layoutX="308.0" layoutY="353.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="Field Size">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+
+        
+      <RadioButton fx:id="fieldSize8" layoutX="308.0" layoutY="380.0" mnemonicParsing="false" textOverrun="CENTER_ELLIPSIS">
+         <toggleGroup>
+            <ToggleGroup fx:id="fieldToggle" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fieldSize5" layoutX="308.0" layoutY="360.0" mnemonicParsing="false" selected="true" textOverrun="CENTER_ELLIPSIS" toggleGroup="$fieldToggle" />
+
+      <Label layoutX="330.0" layoutY="360.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="330.0" layoutY="373.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="5 x 5">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="330.0" layoutY="393.0" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="8 x 8">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <VBox alignment="CENTER_LEFT" layoutX="66.0" layoutY="370.0" prefHeight="62.0" prefWidth="70.0">
+         <children>
+            <Text fx:id="legalMovesLabel1" stroke="#ffffff" strokeType="OUTSIDE" strokeWidth="1.0" text="AI Level">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="aiLevel" disable="true" prefHeight="25.0" prefWidth="60.0" value="1">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="1" />
+                      <String fx:value="2" />
+                  </FXCollections>
+               </items>
+                <value>
+                    <String fx:value="1" />
+                </value>
+            </ChoiceBox>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>

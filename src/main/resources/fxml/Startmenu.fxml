@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id ="mainPane" fx:controller="tnt.viewmodel.StartmenuController" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+         <ImageView fx:id="themeImage" pickOnBounds="true" preserveRatio="true"/>
+      <VBox fx:id="buttonBox" alignment="CENTER" spacing="20.0">
+         <children>
+            <Button fx:id="startBtn" layoutX="38.0" layoutY="36.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Start" />
+            <Button fx:id="settingBtn" layoutX="38.0" layoutY="101.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Setting" />
+            <Button fx:id="loadBtn" layoutX="38.0" layoutY="171.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Load" />
+            <Button fx:id="scoreBtn" layoutX="38.0" layoutY="231.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Score" />
+            <Button fx:id="endBtn" layoutX="38.0" layoutY="294.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="End" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>

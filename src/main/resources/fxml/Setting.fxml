@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="settingScreen" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.viewmodel.SettingController">
+    <children>
+        <ImageView fx:id="themeImageSettings" fitHeight="500.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true" />
+        <VBox fx:id="settingsBox" alignment="CENTER" spacing="30.0">
+            <children>
+                <ChoiceBox fx:id="languageChoiceBox" layoutX="63.0" layoutY="166.0" prefWidth="150.0" prefHeight="30.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="English" />
+                            <String fx:value="Deutsch" />
+                            <String fx:value="한국어" />
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="English" />
+                    </value>
+                </ChoiceBox>
+                <ChoiceBox fx:id="themeChoiceBox" layoutX="63.0" layoutY="98.0" prefWidth="150.0" prefHeight="30.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Horror" />
+                            <String fx:value="Blood Moon" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+                <Button fx:id="backBtn" layoutX="55.0" layoutY="294.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Back" />
+            </children>
+        </VBox>
+    </children>
+</StackPane>
