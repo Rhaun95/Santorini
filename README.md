@@ -16,13 +16,6 @@ Verwendete Technologien
 - Build-Tool: Maven
 
 ### 
-Warum diese Technologien?
----
-Java ist die mir am besten vertraute Sprache, und die Möglichkeit, 
-mit Java eine grafische Benutzeroberfläche zu erstellen, war für mich besonders spannend. 
-Dazu habe ich JavaFX verwendet, um eine interaktive Benutzeroberfläche für das Spiel zu entwickeln.
-
-### 
 Installation
 ---
 Bitte sicherstellen, dass die passende Java-Version(17) installiert ist, um Kompatibilitätsprobleme zu vermeiden.
